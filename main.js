@@ -148,7 +148,7 @@ document.getElementById('btn-greetings').addEventListener('click', function() {
 
 
 
-const letterText = "Chào cậu, năm nay thì tớ chẳng chuẩn bị hoa gì đâu. Mà hoa thì chắc cậu cũng nhận nhiều rồi, nhưng tớ cá chắc là chưa ai tặng thứ này cho cậu đâu nhỉ. Đây là lần đầu tớ viết một trang web hoàn chỉnh (nên có khá nhiều sai sót) và tớ đã dành khá nhiều tâm huyết vào đây nên mong cậu hãy vui vẻ đón nhận nhé, dù nó chưa được tuyệt vời lắm (theo ý cá nhân của tớ). Chúc thì tớ đã chúc rất nhiều ở trước đó rồi nên...ummm, chúc mừng ngày phụ nữ Việt Nam.";
+const letterText = "Chào cậu, năm nay thì tớ chẳng chuẩn bị hoa gì đâu. Mà hoa thì chắc cậu cũng nhận nhiều rồi, nhưng tớ cá chắc là chưa ai tặng thứ này cho cậu đâu nhỉ. Đây là lần đầu tớ viết một trang web hoàn chỉnh (nên có khá nhiều sai sót) và tớ đã dành rất nhiều tâm huyết vào đây nên mong cậu hãy vui vẻ đón nhận nhé, dù nó chưa được tuyệt vời lắm (theo ý cá nhân của tớ). Chúc thì tớ đã chúc rất nhiều ở trước đó rồi nên...ummm, chúc mừng ngày phụ nữ Việt Nam.";
 
 document.getElementById('gift-image').addEventListener('click', function() {
     this.style.display = 'none';
