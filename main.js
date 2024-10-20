@@ -59,6 +59,10 @@ document.getElementById('btn-greetings').addEventListener('click', function() {
     //Xóa nút nhận lời chúc
     document.getElementById('btn-greetings').style.display = 'none';
 });
+
+// Tạo bản sao của mảng greetings
+let remainingGreetings = [...greetings]; 
+
 // Các vị trí đã sử dụng để tránh chồng chéo
 const usedPositions = [];
 
@@ -106,10 +110,16 @@ document.getElementById('btn-greetings').addEventListener('click', function() {
 
     // Tạo 20 ô vuông
     for (let i = 0; i < totalSquares; i++) {
+        if (remainingGreetings.length === 0) break; // Nếu hết lời chúc thì dừng
+
         const square = document.createElement('div');
         square.classList.add('square');
-        square.innerText = greetings[Math.floor(Math.random() * greetings.length)];
-        
+
+        // Chọn ngẫu nhiên lời chúc từ mảng còn lại và xóa nó khỏi mảng
+        const randomIndex = Math.floor(Math.random() * remainingGreetings.length);
+        square.innerText = remainingGreetings[randomIndex];
+        remainingGreetings.splice(randomIndex, 1); // Xóa lời chúc đã chọn
+
         // Lấy vị trí ngẫu nhiên không chồng chéo
         const position = getRandomPosition();
 
@@ -129,11 +139,11 @@ document.getElementById('btn-greetings').addEventListener('click', function() {
         setTimeout(() => {
             square.remove(); // Xóa từng ô sau khi đã hiển thị
         }, totalDuration + 11000); // Hiển thị ô trong 3 giây sau khi xuất hiện
-    
     }
+    
     setTimeout(() => {
         document.getElementById('gift-container').style.display = 'block';
-        }, totalDuration + 11000); // Hiện nút sau khi tất cả ô vuông đã bị xóa
+    }, totalDuration + 11000); // Hiện nút sau khi tất cả ô vuông đã bị xóa
 });
 
 
