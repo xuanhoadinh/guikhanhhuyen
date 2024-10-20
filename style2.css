@@ -1,0 +1,210 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e7f7;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    height: 100vh; /* Chiều cao toàn bộ màn hình */
+}
+
+.container {
+    margin-top: 50px;
+}
+#gift-image {
+    cursor: pointer;
+}
+h1 {
+    color: #ff66b2;
+    animation: blinkingText 2s infinite;
+}
+
+@keyframes blinkingText {
+    0% { color: #ff66b2; }
+    50% { color: #ffccff; }
+    100% { color: #ff66b2; }
+}
+
+#message {
+    font-size: 18px;
+    color: #4d4d4d;
+}
+
+#btn-gift {
+    background-color: #ff66b2;
+    color: white;
+    padding: 10px 20px; /* Điều chỉnh padding cho nút */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none; /* Ẩn nút ban đầu */
+}
+/* Thêm CSS cho lớp căn giữa */
+.center-button {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    margin-top: 20px; /* Thêm khoảng cách phía trên */
+}
+
+button {
+    background-color: #ff66b2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ffccff;
+}
+
+/* Hiệu ứng hoa rơi */
+@keyframes falling {
+    0% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(600px); opacity: 0; }
+}
+
+.snow {
+    position: fixed;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: falling 5s linear infinite;
+}
+
+.snow:nth-child(odd) {
+    animation-duration: 7s;
+}
+
+@media (max-width: 1170px) {
+    h1 {
+        font-size: 30px; /* Kích thước phù hợp với màn hình lớn */
+    }
+
+    #message {
+        font-size: 20px; /* Văn bản dễ đọc hơn với kích thước này */
+        margin: 0 10px; /* Thêm khoảng cách cho văn bản tránh sát lề */
+    }
+
+    .card {
+        width: 320px; /* Thiệp to hơn để vừa với màn hình lớn */
+        height: 220px;
+    }
+
+    button {
+        width: 50%; /* Nút rộng hơn nhưng không chiếm hết màn hình */
+        padding: 12px; /* Tăng padding cho nút to hơn */
+        font-size: 18px; /* Phông chữ nút to hơn để dễ bấm */
+    }
+    
+    .flower {
+        width: 18px; /* Kích thước hoa hợp lý trên màn hình lớn */
+        height: 18px;
+    }
+}
+/* Thêm hiệu ứng nháy cho con trỏ máy đánh chữ */
+#letter-background {
+    display: flex;
+    align-items: center; /* Canh giữa theo chiều dọc */
+    background-image: url('letter_back2.jpg'); /* Thay thế bằng URL của hình ảnh mới */
+    background-size: cover; /* Đảm bảo hình ảnh phủ kín khu vực */
+    background-position: center; /* Canh giữa hình nền */
+    width: 100%; /* Chiều rộng toàn bộ container */
+    max-width: 564px; /* Chiều rộng tối đa là kích thước của ảnh */
+    aspect-ratio: 564 / 376; /* Duy trì tỷ lệ 3:2 của ảnh */
+    padding: 20px; /* Thêm khoảng cách xung quanh nội dung */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+    position: relative; /* Đảm bảo văn bản được hiển thị đúng */
+    color: #000; /* Màu chữ để dễ đọc trên nền */
+    overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+    font-size: 19px; /* Kích thước font chữ của nội dung */
+    border-radius: 10px; /* Bo tròn góc cho đẹp hơn */
+    opacity: 0.9; /* Đặt độ trong suốt nếu muốn */
+    margin: 0 auto; /* Căn giữa lá thư trên trang */
+}
+
+#letter-content {
+    flex: 1; /* Để nội dung lá thư chiếm toàn bộ không gian còn lại */
+    text-align: center; /* Canh giữa nội dung lá thư */
+}
+
+#video-container {
+    margin: 0 20px; /* Khoảng cách giữa video và lá thư */
+}
+
+
+
+#letter-content {
+    position: absolute;
+    top: 10%; /* Điều chỉnh khoảng cách từ trên */
+    left: 5%; /* Điều chỉnh khoảng cách từ trái */
+    width: 90%; /* Nội dung chiếm 90% chiều rộng của ảnh */
+    height: auto; /* Để nội dung bức thư co dãn theo nội dung */
+    white-space: pre-wrap; /* Giữ nguyên định dạng xuống dòng */
+    line-height: 1.5; /* Giãn dòng để dễ đọc */
+    font-family: "Dancing Script", cursive;
+}
+
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* Các ô vuông */
+.square {
+    background-color: #ff66b2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0; /* Ban đầu ẩn */
+    transition: opacity 1s ease-out; /* Hiệu ứng mờ dần */
+    pointer-events: none;
+    font-size: 14px;
+    border-radius: 5px;
+
+    /* Thêm padding để tạo không gian xung quanh nội dung */
+    padding: 8px 12px;
+
+    /* Đặt kích thước tối thiểu để đảm bảo các ô không quá nhỏ */
+    min-width: 60px;
+    min-height: 60px;
+
+    /* Đặt kích thước tối đa nếu muốn giới hạn kích thước ô */
+    max-width: 200px;
+    max-height: 150px;
+
+    /* Đảm bảo nội dung trong ô không bị tràn ra ngoài */
+    word-wrap: break-word;
+    text-align: center;
+}
+/* Thêm CSS cho ô nhập cảm nghĩ */
+#center-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Thêm khoảng cách phía trên */
+}
+
+textarea {
+    width: 80%; /* Đặt chiều rộng ô nhập */
+    max-width: 500px; /* Chiều rộng tối đa */
+    padding: 10px; /* Thêm padding để dễ nhập */
+    border-radius: 5px; /* Bo tròn góc */
+    border: 1px solid #ccc; /* Đường viền */
+    resize: none; /* Tắt khả năng thay đổi kích thước */
+    font-size: 16px; /* Kích thước font chữ */
+}
