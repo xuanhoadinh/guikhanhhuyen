@@ -33,23 +33,6 @@ h1 {
     color: #4d4d4d;
 }
 
-#btn-gift {
-    background-color: #ff66b2;
-    color: white;
-    padding: 10px 20px; /* Điều chỉnh padding cho nút */
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    display: none; /* Ẩn nút ban đầu */
-}
-/* Thêm CSS cho lớp căn giữa */
-.center-button {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    margin-top: 20px; /* Thêm khoảng cách phía trên */
-}
-
 button {
     background-color: #ff66b2;
     color: white;
@@ -131,14 +114,17 @@ button:hover {
     opacity: 0.9; /* Đặt độ trong suốt nếu muốn */
     margin: 0 auto; /* Căn giữa lá thư trên trang */
 }
-
+#btn-feedback {
+    margin-left: 20px;
+}
 #letter-content {
     flex: 1; /* Để nội dung lá thư chiếm toàn bộ không gian còn lại */
     text-align: center; /* Canh giữa nội dung lá thư */
 }
 
 #video-container {
-    margin: 0 20px; /* Khoảng cách giữa video và lá thư */
+    margin: 0 auto; /* Khoảng cách giữa video và lá thư */
+    margin-top: 20px;
 }
 
 
