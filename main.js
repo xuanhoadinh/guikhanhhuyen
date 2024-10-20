@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         // Hiển thị thông báo gửi thành công
-        alert('Trang web để đây là hết, hãy tắt tab này đi và bấm lại đường link để chạy lại trang web.');
+        alert('Trang web đến đây là hết, hãy tắt tab này đi và bấm lại đường link để chạy lại trang web.');
 
         // Gửi form đến Formspree
         const formData = new FormData(form);
